@@ -2,6 +2,10 @@ name: RTD
 version: '${project.version}'
 main: net.levelmc.rtd.RTD
 api-version: '1.20'
-authors: [SamVolvo]
+authors: [LevelMC]
 description: a dice roll plugin
 website: www.levelmc.net
+commands:
+  roll:
+    description: Rolls the dice
+    permission: rtd.roll
