@@ -12,6 +12,11 @@ public final class RTD extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(
                 ChatColor.translateAlternateColorCodes('&', "&e&lR&a&lT&d&lD &eActivated")
         );
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+
         //Commands
         getCommand("roll").setExecutor(new rollCommand());
 
