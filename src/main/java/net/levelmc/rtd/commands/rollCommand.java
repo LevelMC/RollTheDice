@@ -12,25 +12,41 @@ import java.util.Random;
 
 public class rollCommand implements CommandExecutor {
 
-    Plugin plugin = RTD.getPlugin(RTD.class);
-
-
     Random random = new Random();
+
+    private final String prefix;
+    private final boolean broadcast;
+
+    public rollCommand(String prefix, boolean broadcast){
+        this.prefix = prefix;
+        this.broadcast = broadcast;
+    }
+
+
 
 
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        String prefix = plugin.getConfig().getString("prefix");
 
         if (sender instanceof Player){
             Player p = (Player) sender;
 
             int dice = random.nextInt(6)+1;
 
-            p.sendMessage( prefix + ChatColor.translateAlternateColorCodes('&',
-                    "&7: &eYou threw a " + ChatColor.RED + dice
-            ));
+            if (broadcast == true){
+
+                p.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', prefix +
+                        " §a§l" + p.getDisplayName() + " §erolled a §c§l" + dice + "§e!"
+                ));
+
+            }else{
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + "&7: " +
+                        "&eYou rolled a &c&l" + dice + "&e!"
+                ));
+            }
+
+
 
         }else{
             System.out.println("Be online to use this command");

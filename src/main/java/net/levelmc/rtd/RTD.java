@@ -16,9 +16,13 @@ public final class RTD extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
+        //config
+        String prefix = this.getConfig().getString("prefix");
+        boolean broadcast = this.getConfig().getBoolean("broadcast-roll");
+
 
         //Commands
-        getCommand("roll").setExecutor(new rollCommand());
+        getCommand("roll").setExecutor(new rollCommand(prefix, broadcast));
 
 
 

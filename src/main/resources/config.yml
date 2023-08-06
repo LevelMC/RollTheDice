@@ -1,11 +1,15 @@
 # Welcome to the RTD config.
 # Please don't change any names of the string in this config file! This will make the plugin stop working like it should.
 
-prefix: "§8§l{§8§e§lR§a§lT§d§lD§l}"
+## The color code is & !
+prefix: "&8&l{&8&e&lR&a&lT&d&lD&l}"
+
+## Do you want to show the whole server what you got?
+broadcast-roll: true
 
 
 # language change option comming soon!
 
 
 
-# config version 1
+# config version 1.1
