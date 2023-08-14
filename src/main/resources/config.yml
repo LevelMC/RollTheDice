@@ -8,8 +8,10 @@ prefix: "&8&l{&8&e&lR&a&lT&d&lD&l}"
 broadcast-roll: true
 
 
-# language change option comming soon!
+# Select the language u want to use.
+# The current supported languages are: English, Dutch, French, German and spanish.
+
+language: English
 
 
-
-# config version 1.1
+# config version 1.2
